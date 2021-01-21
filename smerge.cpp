@@ -7,7 +7,7 @@
 #include <omp.h>
 
 int main(int argc, char *argv[]){
-#pragma omp parallel for num_threads(2)
+#pragma omp parallel for num_threads(argc-1)
     for (int i=1; i<argc; i++ ){
         std::string line = "";
         std::string filename = argv[i];

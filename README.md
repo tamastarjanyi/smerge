@@ -7,7 +7,8 @@ Simple usage:
 ```bash
 M=1 ./smerge \
 <(while true ; do echo "$(date) - slave $(tr -dc A-Za-z </dev/urandom|head -c 32; echo '')" ; sleep $((RANDOM%M)); done &) \
-<(while true ; do echo "$(date) - master $(tr -dc A-Za-z </dev/urandom|head -c 32; echo '')" ; sleep $((RANDOM%M)); done &)
+<(while true ; do echo "$(date) - master $(tr -dc A-Za-z </dev/urandom|head -c 32; echo '')" ; sleep $((RANDOM%M)); done &) \
+<(while true ; do echo "$(date) - client $(tr -dc A-Za-z </dev/urandom|head -c 32; echo '')" ; sleep $((RANDOM%M)); done &)
 ```
 
 
